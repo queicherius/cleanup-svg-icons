@@ -52,9 +52,10 @@ function customOptimize (svg) {
 
   // Make sure we are not using #!@?!&$! conflicting class names
   const classes = execall(/class="([^"]*)"/g, svg)
+    .map(cls => cls.sub[0])
+    .filter(cls => !cls.match(/(?!svg_[\W]{8})/))
 
   classes.map(cls => {
-    cls = cls.sub[0]
     svg = svg.replace(new RegExp(cls, 'g'), 'svg_' + randomstring.generate(8))
   })
 
