@@ -1,7 +1,7 @@
 {
-  "name": "make-svg-less-stupid",
+  "name": "cleanup-svg-icons",
   "version": "1.0.0",
-  "description": "Clean up SVGs to be actually usable",
+  "description": "Clean up SVGs to be actually usable as icons",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
