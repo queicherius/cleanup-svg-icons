@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs-extra')
 const SVGo = require('svgo')
 const execall = require('execall')
