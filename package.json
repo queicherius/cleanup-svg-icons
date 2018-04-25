@@ -1,6 +1,6 @@
 {
   "name": "cleanup-svg-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clean up SVGs to be actually usable as icons",
   "bin": {
     "cleanup-svg-icons": "index.js"
