@@ -45,7 +45,7 @@ function customOptimize (svg) {
   svg = svg.replace(/ id="[^"]*"/g, '')
 
   // Make sure that we are not using hardcoded colors and instead react to the parent
-  svg = svg.replace(/#([\dA-F]{3}|[\dA-F]{6})/g, 'currentColor')
+  svg = svg.replace(/#([\dA-F]{6}|[\dA-F]{3})/g, 'currentColor')
 
   // Force "none" fill to actually work propperly
   svg = svg.replace(/none(?!\!important)/g, 'none!important')
