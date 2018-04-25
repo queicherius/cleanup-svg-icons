@@ -14,7 +14,6 @@
 > :warning: This modifies files directly, please use version control or make a backup.
 
 ```
-git clone https://github.com/queicherius/make-svg-less-stupid
-npm install
-node index.js "/the/path/to/a/folder/or/any/glob/*.svg"
+npm install -g cleanup-svg-icons
+cleanup-svg-icons "/the/path/to/a/folder/or/any/glob/*.svg"
 ```
