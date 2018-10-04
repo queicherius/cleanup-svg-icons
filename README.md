@@ -1,7 +1,7 @@
 # cleanup-svg-icons
 
 [![Build Status](https://img.shields.io/travis/queicherius/cleanup-svg-icons.svg?style=flat-square)](https://travis-ci.org/queicherius/cleanup-svg-icons)
-[![Coverage Status](https://img.shields.io/codecov/c/github/queicherius/cleanup-svg-icons/master.svg?style=flat-square)](https://codecov.io/github/queicherius/cleanup-svg-icons)
+[![Coverage Status](https://img.shields.io/codecov/c/github/queicherius/cleanup-svg-icons/master.svg?style=flat-square)](https://codecov.io/github/queicherius/cleanup-svg-icons) [![Greenkeeper badge](https://badges.greenkeeper.io/queicherius/cleanup-svg-icons.svg)](https://greenkeeper.io/)
 
 > Clean up SVGs to be actually usable as icons
 
