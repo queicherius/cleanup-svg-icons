@@ -6,7 +6,7 @@ const FILES = [
   'circles.svg'
 ]
 
-describe('fast-get', () => {
+describe('cleanup-svg-icons', () => {
   it('can generate optimized SVGs from a glob', async () => {
     // Copy the input files into the output (since they get overwritten)
     FILES.forEach(file => {

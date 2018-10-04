@@ -22,16 +22,11 @@ async function run () {
 }
 
 async function optimizeFile (path) {
-  try {
-    let file = await fs.readFile(path, 'utf-8')
-    let result = await svgo.optimize(file)
-    result = customOptimize(result.data)
-    console.log(`${path}: ${file.length} -> ${result.length}`)
-    await fs.writeFile(path, result, 'utf-8')
-  } catch (err) {
-    console.error('Error optimizing ' + path)
-    console.error(err)
-  }
+  let file = await fs.readFile(path, 'utf-8')
+  let result = await svgo.optimize(file)
+  result = customOptimize(result.data)
+  console.log(`${path}: ${file.length} -> ${result.length}`)
+  await fs.writeFile(path, result, 'utf-8')
 }
 
 function customOptimize (svg) {
