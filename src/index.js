@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const fs = require('fs-extra')
 const SVGo = require('svgo')
 const execall = require('execall')
@@ -7,8 +6,8 @@ const glob = require('glob')
 
 const svgo = new SVGo({
   plugins: [
-    {removeTitle: true},
-    {sortAttrs: true}
+    { removeTitle: true },
+    { sortAttrs: true }
   ],
   js2svg: {
     pretty: true,
@@ -16,14 +15,11 @@ const svgo = new SVGo({
   }
 })
 
-glob(process.argv[2], function (err, files) {
-  if (err) {
-    return console.error(err)
-  }
-
+async function run () {
+  const files = glob.sync(process.argv[2])
   console.log('Optimizing ' + files.length + ' files')
-  files.map(optimizeFile)
-})
+  await Promise.all(files.map(optimizeFile))
+}
 
 async function optimizeFile (path) {
   try {
@@ -49,9 +45,9 @@ function customOptimize (svg) {
   svg = svg.replace(/#([\dA-F]{6}|[\dA-F]{3})/g, 'currentColor')
 
   // Force "none" fill to actually work propperly
-  svg = svg.replace(/none(?!\!important)/g, 'none!important')
+  svg = svg.replace(/none(?!!important)/g, 'none!important')
 
-  // Make sure we are not using #!@?!&$! conflicting class names
+  // Make sure we are not using conflicting class names
   const classes = execall(/class="([^"]*)"/g, svg)
     .map(cls => cls.sub[0])
     .filter(cls => !cls.match(/^svg_\w*$/))
@@ -62,3 +58,5 @@ function customOptimize (svg) {
 
   return svg
 }
+
+module.exports = run
