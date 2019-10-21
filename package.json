@@ -17,7 +17,7 @@
   "dependencies": {
     "execall": "^1.0.0",
     "fs-extra": "^7.0.0",
-    "glob": "^7.1.2",
+    "glob": "^7.1.5",
     "randomstring": "^1.1.5",
     "svgo": "^1.1.1"
   },
