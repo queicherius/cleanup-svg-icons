@@ -7,7 +7,9 @@ const glob = require('glob')
 const svgo = new SVGo({
   plugins: [
     { removeTitle: true },
-    { sortAttrs: true }
+    { sortAttrs: true },
+    { convertPathData: { noSpaceAfterFlags: false } },
+    { mergePaths: { noSpaceAfterFlags: false } }
   ],
   js2svg: {
     pretty: true,
